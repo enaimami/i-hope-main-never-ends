@@ -6,11 +6,11 @@
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 11:50:35 by mdisbuda          #+#    #+#             */
-/*   Updated: 2026/01/06 11:55:48 by mdisbuda         ###   ########.fr       */
+/*   Updated: 2026/01/06 12:14:33 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    return c >= '0' && c <= '9' ? 1 : 0;
+	return (c >= '0' && c <= '9');
 }

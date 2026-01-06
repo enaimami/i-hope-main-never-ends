@@ -6,7 +6,7 @@
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 11:56:09 by mdisbuda          #+#    #+#             */
-/*   Updated: 2026/01/06 12:00:28 by mdisbuda         ###   ########.fr       */
+/*   Updated: 2026/01/06 12:12:29 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,7 @@
 int ft_isalpha(int c);
 int ft_isdigit(int c);
 int ft_isalnum(int c);
+int ft_isascii(int c);
+int ft_isprint(int c);
 
 #endif
