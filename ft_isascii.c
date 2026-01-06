@@ -6,11 +6,11 @@
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 12:04:57 by mdisbuda          #+#    #+#             */
-/*   Updated: 2026/01/06 12:09:01 by mdisbuda         ###   ########.fr       */
+/*   Updated: 2026/01/06 12:21:11 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    return c >= 0 && c <= 127 ? 1 : 0;
+	return (c >= 0 && c <= 127);
 }
