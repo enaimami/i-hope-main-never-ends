@@ -6,13 +6,15 @@
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 12:28:53 by mdisbuda          #+#    #+#             */
-/*   Updated: 2026/01/06 12:38:47 by mdisbuda         ###   ########.fr       */
+/*   Updated: 2026/01/09 15:55:21 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_toupper(int c)
 {
-	if (c >= 65 && 90 <= c)
+	if (c >= 97 && 122 <= c)
 	{
 		c = c - 32;
 	}
