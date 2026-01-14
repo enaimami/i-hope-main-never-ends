@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 11:39:53 by mdisbuda          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2026/01/07 13:06:39 by mdisbuda         ###   ########.fr       */
-=======
-/*   Updated: 2026/01/09 15:55:27 by mdisbuda         ###   ########.fr       */
->>>>>>> 421f3fe4d5c1fbe54bd9bf34eff7d6b04dbb4dd3
+/*   Created: 2026/01/06 12:40:11 by mdisbuda          #+#    #+#             */
+/*   Updated: 2026/01/09 15:55:23 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_tolower(int c)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
+	if (c >= 65 && 90 <= c)
+	{
+		c = c + 32;
+	}
+	return (c);
 }

@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 11:39:53 by mdisbuda          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2026/01/07 13:06:39 by mdisbuda         ###   ########.fr       */
-=======
-/*   Updated: 2026/01/09 15:55:27 by mdisbuda         ###   ########.fr       */
->>>>>>> 421f3fe4d5c1fbe54bd9bf34eff7d6b04dbb4dd3
+/*   Created: 2026/01/09 15:48:05 by mdisbuda          #+#    #+#             */
+/*   Updated: 2026/01/13 23:40:31 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+char	*ft_strdup(const char *s)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
+	size_t	i;
+	char	*temp;
+
+	if (!s)
+		return (NULL);
+	temp = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!temp)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		temp[i] = s[i];
+		i++;
+	}
+	temp[i] = '\0';
+	return (temp);
 }

@@ -6,7 +6,11 @@
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 12:28:53 by mdisbuda          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2026/01/07 13:06:33 by mdisbuda         ###   ########.fr       */
+=======
+/*   Updated: 2026/01/09 15:55:21 by mdisbuda         ###   ########.fr       */
+>>>>>>> 421f3fe4d5c1fbe54bd9bf34eff7d6b04dbb4dd3
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +18,7 @@
 
 int	ft_toupper(int c)
 {
-	if (c >= 65 && 90 <= c)
+	if (c >= 97 && 122 <= c)
 	{
 		c = c - 32;
 	}
