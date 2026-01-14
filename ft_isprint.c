@@ -6,9 +6,11 @@
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 12:09:45 by mdisbuda          #+#    #+#             */
-/*   Updated: 2026/01/06 12:15:37 by mdisbuda         ###   ########.fr       */
+/*   Updated: 2026/01/07 13:06:49 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

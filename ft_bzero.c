@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 11:56:28 by mdisbuda          #+#    #+#             */
-/*   Updated: 2026/01/07 13:05:52 by mdisbuda         ###   ########.fr       */
+/*   Created: 2026/01/07 13:29:52 by mdisbuda          #+#    #+#             */
+/*   Updated: 2026/01/07 14:58:47 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
-int	ft_isalnum(int c)
+void	ft_bzero(void *s, size_t n)
 {
-	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
+	size_t i;
+	unsigned char* mem; 
+	
+	mem = (unsigned char*)s;
+	i = 0;
+	while(i < n)
+	{
+		mem[i] = (unsigned char)0;
+		i++;
+	}
 }
