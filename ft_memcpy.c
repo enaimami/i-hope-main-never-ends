@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sacrife.c                                          :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: enaimami <enaimami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/13 18:53:36 by mdisbuda          #+#    #+#             */
-/*   Updated: 2026/01/14 17:47:27 by mdisbuda         ###   ########.fr       */
+/*   Created: 2024/01/07 20:06:16 by enaimami          #+#    #+#             */
+/*   Updated: 2024/01/19 14:48:55 by enaimami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 
-int	main(void)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
+	size_t			i;
+	unsigned char	*d;
+	unsigned char	*s;
 
-	char	dest1[] = "Hello World!";
-	char	dest2[] = "Hello World!";
-	char	src[] = "42Kocaeli";
-	printf("%s\n", memmove(dest1, dest1 + 2, 5));
-	printf("%s\n", ft_memmove(dest2, dest2 + 2, 5));	
-	return (0);
+	i = 0;
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
+	if (!dst && !src)
+		return (0);
+	while (i < n)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dst);
 }
