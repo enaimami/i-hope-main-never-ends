@@ -6,7 +6,7 @@
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:06:24 by mdisbuda          #+#    #+#             */
-/*   Updated: 2026/01/14 18:08:09 by mdisbuda         ###   ########.fr       */
+/*   Updated: 2026/01/14 18:09:14 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ strlcpy(char  *dst, const char *src, size_t size)
 
 	str_len = ft_strlen(src);
 	if (size == 0)
+	{
 		return (str_len);
+	}
 	i = 0;
 	while (src[i] != '\0' && i < size - 1)
 	{
