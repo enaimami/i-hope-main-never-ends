@@ -6,11 +6,12 @@
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 13:29:52 by mdisbuda          #+#    #+#             */
-/*   Updated: 2026/01/14 12:40:59 by mdisbuda         ###   ########.fr       */
+/*   Updated: 2026/01/17 12:00:35 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

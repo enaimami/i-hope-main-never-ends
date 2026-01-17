@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 12:28:53 by mdisbuda          #+#    #+#             */
-/*   Updated: 2026/01/17 12:22:05 by mdisbuda         ###   ########.fr       */
+/*   Created: 2026/01/17 12:07:45 by mdisbuda          #+#    #+#             */
+/*   Updated: 2026/01/17 12:21:58 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
-int	ft_toupper(int c)
+void *ft_memmove(void *dest, const void *src, size_t n)
 {
-	if (c >= 97 && 122 <= c)
-	{
-		c = c - 32;
-	}
-	return (c);
+    unsigned char       *d;
+    const unsigned char *s;
+
+    d = (unsigned char *)dest;
+    s = (const unsigned char *)src;
+
+    if (d > s)
+    {
+        while (n--)
+            d[n] = s[n];
+    }
+    else
+    {
+		ft_memcpy(d, s, n);
+    }
+    return dest;
 }
