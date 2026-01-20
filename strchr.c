@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sacrife.c                                          :+:      :+:    :+:   */
+/*   strchr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/13 18:53:36 by mdisbuda          #+#    #+#             */
-/*   Updated: 2026/01/14 17:47:27 by mdisbuda         ###   ########.fr       */
+/*   Created: 2026/01/20 11:42:26 by mdisbuda          #+#    #+#             */
+/*   Updated: 2026/01/20 11:44:52 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <string.h>
-#include <stdio.h>
 
-int	main(void)
+char *strchr(const char *s, int c)
 {
+	int i;
 
-	char	dest1[] = "Hello World!";
-	char	dest2[] = "Hello World!";
-	char	src[] = "42Kocaeli";
-	printf("%s\n", memmove(dest1, dest1 + 2, 5));
-	printf("%s\n", ft_memmove(dest2, dest2 + 2, 5));	
-	return (0);
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			return &s[i];
+		i++;
+	}
+	if (c == '\0')
+		return &s[i];
+	return NULL;
 }
