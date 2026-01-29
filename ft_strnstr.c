@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/07 20:06:16 by mdisbuda          #+#    #+#             */
-/*   Updated: 2026/01/29 08:28:17 by mdisbuda         ###   ########.fr       */
+/*   Created: 2026/01/20 19:43:40 by mdisbuda          #+#    #+#             */
+/*   Updated: 2026/01/21 06:07:59 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*strnstr(const char *big, const char *little, size_t len)
 {
-	unsigned char	*d;
-	unsigned char	*s;
+	size_t	i;
+	size_t	k;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	if (!dst && !src)
-		return (0);
-	if (s < d)
+	if (little[0] == '\0')
+		return ((char *)big);
+	i = 0;
+	while (big[i] != '\0' && i < len)
 	{
-		while (len > 0)
+		k = 0;
+		while (i + k < len)
 		{
-			d[len - 1] = s[len - 1];
-			len--;
+			if (big[i + k] != little[k])
+				break ;
+			if (little[k + 1] == '\0')
+				return ((char *)&big[i]);
+			k++;
 		}
+		i++;
 	}
-	else
-	{
-		while (len > 0)
-		{
-			*d++ = *s++;
-			len--;
-		}
-	}
-	return (dst);
+	return (NULL);
 }

@@ -1,41 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/07 20:06:16 by mdisbuda          #+#    #+#             */
+/*   Created: 2024/05/24 16:32:03 by mdisbuda          #+#    #+#             */
 /*   Updated: 2026/01/29 08:28:17 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+static size_t	count_digits(int n)
 {
-	unsigned char	*d;
-	unsigned char	*s;
+	size_t	count;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	if (!dst && !src)
-		return (0);
-	if (s < d)
+	if (n == 0)
+		return (1);
+	count = 0;
+	if (n < 0)
+		count = 1;
+	while (n != 0)
 	{
-		while (len > 0)
-		{
-			d[len - 1] = s[len - 1];
-			len--;
-		}
+		n = n / 10;
+		count++;
 	}
-	else
+	return (count);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*result;
+	size_t	len;
+	long	num;
+
+	len = count_digits(n);
+	result = (char *)malloc(len + 1);
+	if (!result)
+		return (NULL);
+	result[len] = '\0';
+	num = n;
+	if (num < 0)
 	{
-		while (len > 0)
-		{
-			*d++ = *s++;
-			len--;
-		}
+		result[0] = '-';
+		num = -num;
 	}
-	return (dst);
+	if (num == 0)
+		result[0] = '0';
+	while (num > 0)
+	{
+		len--;
+		result[len] = (num % 10) + '0';
+		num /= 10;
+	}
+	return (result);
 }

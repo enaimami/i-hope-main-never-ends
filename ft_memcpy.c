@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enaimami <enaimami@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/07 20:06:16 by enaimami          #+#    #+#             */
-/*   Updated: 2024/01/19 14:48:55 by enaimami         ###   ########.fr       */
+/*   Created: 2024/01/07 20:06:16 by mdisbuda          #+#    #+#             */
+/*   Updated: 2026/01/29 08:28:17 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		return (0);
 	while (i < n)
 	{
+		
 		d[i] = s[i];
 		i++;
 	}
