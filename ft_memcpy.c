@@ -6,7 +6,7 @@
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 20:06:16 by mdisbuda          #+#    #+#             */
-/*   Updated: 2026/01/29 08:28:17 by mdisbuda         ###   ########.fr       */
+/*   Updated: 2026/01/29 18:04:27 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		return (0);
 	while (i < n)
 	{
-		
 		d[i] = s[i];
 		i++;
 	}
