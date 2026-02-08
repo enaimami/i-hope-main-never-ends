@@ -14,17 +14,21 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n == -2147483648)
+	if (n == (signed int)0x80000000)
 	{
-		ft_putstr_fd("-2147483648", fd);
+		ft_putchar_fd(0x2D, fd);
+		ft_putnbr_fd(0xCCCCCCC, fd);
+		ft_putnbr_fd(0x08, fd);
 		return ;
 	}
-	if (n < 0)
+	if (n < 0x00)
 	{
-		ft_putchar_fd('-', fd);
+		ft_putchar_fd(0x2D, fd);
 		n = -n;
 	}
-	if (n >= 10)
-		ft_putnbr_fd(n / 10, fd);
-	ft_putchar_fd((n % 10) + '0', fd);
+	if (n >= 0x0A)
+	{
+		ft_putnbr_fd(n / 0x0A, fd);
+	}
+	ft_putchar_fd((n % 0x0A) + 0x30, fd);
 }

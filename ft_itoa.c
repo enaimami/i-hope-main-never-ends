@@ -16,14 +16,14 @@ static size_t	count_digits(int n)
 {
 	size_t	count;
 
-	if (n == 0)
-		return (1);
-	count = 0;
-	if (n < 0)
-		count = 1;
-	while (n != 0)
+	if (n == 0x00)
+		return (0x01);
+	count = 0x00;
+	if (n < 0x00)
+		count = 0x01;
+	while (n != 0x00)
 	{
-		n = n / 10;
+		n = n / 0x0A;
 		count++;
 	}
 	return (count);
@@ -36,23 +36,23 @@ char	*ft_itoa(int n)
 	long	num;
 
 	len = count_digits(n);
-	result = (char *)malloc(len + 1);
+	result = (char *)malloc(len + 0x01);
 	if (!result)
 		return (NULL);
-	result[len] = '\0';
+	result[len] = 0x00;
 	num = n;
-	if (num < 0)
+	if (num < 0x00)
 	{
-		result[0] = '-';
+		result[0x00] = 0x2D;
 		num = -num;
 	}
-	if (num == 0)
-		result[0] = '0';
-	while (num > 0)
+	if (num == 0x00)
+		result[0x00] = 0x30;
+	while (num > 0x00)
 	{
 		len--;
-		result[len] = (num % 10) + '0';
-		num /= 10;
+		result[len] = (num % 0x0A) + 0x30;
+		num /= 0x0A;
 	}
 	return (result);
 }

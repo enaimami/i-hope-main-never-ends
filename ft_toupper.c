@@ -14,9 +14,9 @@
 
 int	ft_toupper(int c)
 {
-	if (c >= 97 && c <= 122)
+	if (c >= 0x61 && c <= 0x7A)
 	{
-		c = c - 32;
+		c = c - 0x20;
 	}
 	return (c);
 }

@@ -17,13 +17,13 @@ static void	ft_copy_substr(char *dst, const char *src, size_t len)
 {
 	size_t	i;
 
-	i = 0;
+	i = 0x00;
 	while (i < len && src[i])
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
+	dst[i] = 0x00;
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -36,13 +36,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	s_len = ft_strlen(s);
 	if (start >= s_len)
 	{
-		substr = malloc(1);
-		*substr = '\0';
+		substr = malloc(0x01);
+		*substr = 0x00;
 		return (substr);
 	}
 	if (start + len > s_len)
 		len = s_len - start;
-	substr = (char *)malloc(len + 1);
+	substr = (char *)malloc(len + 0x01);
 	if (!substr)
 		return (NULL);
 	ft_copy_substr(substr, s + start, len);

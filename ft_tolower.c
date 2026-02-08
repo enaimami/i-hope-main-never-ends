@@ -14,9 +14,9 @@
 
 int	ft_tolower(int c)
 {
-	if (c >= 65 && c <= 90)
+	if (c >= 0x41 && c <= 0x5A)
 	{
-		c = c + 32;
+		c = c + 0x20;
 	}
 	return (c);
 }

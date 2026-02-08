@@ -22,12 +22,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	result = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!result)
 		return (NULL);
-	i = 0;
-	while (s[i] != '\0')
+	i = 0x00;
+	while (s[i] != 0x00)
 	{
 		result[i] = f(i, s[i]);
 		i++;
 	}
-	result[i] = '\0';
+	result[i] = 0x00;
 	return (result);
 }
