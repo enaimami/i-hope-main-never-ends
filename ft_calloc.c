@@ -18,12 +18,12 @@ void	*ft_calloc(size_t n, size_t size)
 	size_t	total;
 	void	*ptr;
 
-	if (n == 0 || size == 0)
+	if (n == 0x00 || size == 0x00)
 	{
-		ptr = malloc(0);
+		ptr = malloc(0x00);
 		return (ptr);
 	}
-	if (n > (size_t)-1 / size)
+	if (n > (size_t) - 0x01 / size)
 		return (NULL);
 	total = n * size;
 	ptr = malloc(total);
