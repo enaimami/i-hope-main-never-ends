@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 static void	ft_copy_substr(char *dst, const char *src, size_t len)
 {
