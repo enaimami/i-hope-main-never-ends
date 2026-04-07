@@ -25,7 +25,5 @@ int	ft_putnbr_hex_up(unsigned long n);
 int	ft_putptr(unsigned long n);
 int	detect_and_write(va_list *ap, const char s);
 int	ft_printf(const char *s, ...);
-int	ft_putnbr_hex(unsigned long n);
-int	ft_putnbr_hex_up(unsigned long n);
 
 #endif

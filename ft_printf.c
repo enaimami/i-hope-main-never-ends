@@ -32,7 +32,7 @@ int	detect_and_write(va_list *ap, const char s)
 		return (ft_putnbr_hex(va_arg(*ap, unsigned long)));
 	if (s == 'X')
 		return (ft_putnbr_hex_up(va_arg(*ap, unsigned long)));
-	return (0);
+	return (ft_putchar('%') + ft_putchar(s));
 }
 
 int	ft_printf(const char *s, ...)
