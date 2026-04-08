@@ -6,7 +6,7 @@
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.com.t +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 12:32:06 by mdisbuda          #+#    #+#             */
-/*   Updated: 2026/04/07 19:15:23 by mdisbuda         ###   ########.fr       */
+/*   Updated: 2026/04/08 19:51:03 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,60 @@ int checker(char *str, int *i)
     return (str[*i] == '\n');
 }
 
+int fucking_norminette(char *src,char **dst)
+{
+    int i;
+
+    i = 0;
+    while(src[i] != '\0')
+    {
+        (*dst)[i] = src[i];
+        i++;
+    }
+    return (i);
+}
+
+char *ft_strjoin_gnl(char *stash, char *buf)
+{
+    char* temp;
+    int i;
+    int j;
+    if (!stash)
+    {
+        stash = malloc(1);
+        if (!stash)
+            return (NULL);
+        stash[0] = '\0';
+    }
+    temp = malloc(ft_strlen(stash) + ft_strlen(buf) + 1);
+    if(!temp)
+        return (NULL);
+    i = 0;
+    j = 0;
+    temp[fucking_norminette(buf,&temp + (fucking_norminette(stash,&temp)))] = '\0';
+    free(stash);
+    return (temp);
+}
+
+char *reader(int fd)
+{
+    ssize_t bytes_read;
+    char *temp;
+    if(fd < 0)
+        return (NULL);
+    temp = malloc(BUFFER_SIZE + 1);
+    if(!temp)
+        return (NULL);
+    bytes_read = read(fd,temp, BUFFER_SIZE);
+    if(bytes_read <= 0)
+    {
+        free(temp);
+        return (NULL);
+    }
+    temp[bytes_read] = '\0'; 
+    return (temp);
+}
+
 char *get_next_line(int fd)
 {
     if (fd < 0 || BUFFER_SIZE <= 0)
@@ -36,26 +90,12 @@ char *get_next_line(int fd)
     int i;
 
     if(checker(&memory,&i))
-
-}
-
-
-char *splitter(char **str)
-{
-    char *temp;
-    int i;
-    int x;
-
-    i = 0;
-    x = 0;
-    if(checker(&str,&i))
     {
-        while(x < i+1)
-        {
-            temp[x] = (*str)[x];
-            x++;
-        }
+        
     }
+
+
+    free(memory);
 }
 
 
@@ -72,13 +112,13 @@ int ft_strlen(char *src)
 }
 
 
-char *splitter(char *src, int sp)
+char *splitter(char **src, int sp)
 {
     char *dst;
     int j;
     int src_len; 
 
-    src_len = ft_strlen(src);
+    src_len = ft_strlen(*src);
     if (sp > src_len)
         return (NULL); 
     dst = malloc(sp + 1);
@@ -87,9 +127,10 @@ char *splitter(char *src, int sp)
     j = 0;
     while(j < sp)
     {
-        dst[j] = src[j];
+        dst[j] = (*src)[j];
         j++;
     }
     dst[j] = '\0';
+    *src = *src + sp;
     return(dst);
 }
