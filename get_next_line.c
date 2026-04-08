@@ -6,7 +6,7 @@
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.com.t +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 12:32:06 by mdisbuda          #+#    #+#             */
-/*   Updated: 2026/04/08 19:51:03 by mdisbuda         ###   ########.fr       */
+/*   Updated: 2026/04/08 19:57:31 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ int checker(char *str, int *i)
     return (str[*i] == '\n');
 }
 
-int fucking_norminette(char *src,char **dst)
+int fucking_norminette(char *src,char *dst)
 {
     int i;
 
     i = 0;
     while(src[i] != '\0')
     {
-        (*dst)[i] = src[i];
+        dst[i] = src[i];
         i++;
     }
     return (i);
@@ -55,9 +55,9 @@ char *ft_strjoin_gnl(char *stash, char *buf)
     temp = malloc(ft_strlen(stash) + ft_strlen(buf) + 1);
     if(!temp)
         return (NULL);
-    i = 0;
-    j = 0;
-    temp[fucking_norminette(buf,&temp + (fucking_norminette(stash,&temp)))] = '\0';
+    i = fucking_norminette(stash, temp);
+    j = fucking_norminette(buf, temp + i);
+    temp[i + j] = '\0';
     free(stash);
     return (temp);
 }
@@ -83,11 +83,11 @@ char *reader(int fd)
 
 char *get_next_line(int fd)
 {
-    if (fd < 0 || BUFFER_SIZE <= 0)
-        return (NULL);
     static char *memory;
     char *buffer;
     int i;
+    if (fd < 0 || BUFFER_SIZE <= 0)
+        return (NULL);
 
     if(checker(&memory,&i))
     {
