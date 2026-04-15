@@ -6,7 +6,7 @@
 /*   By: mdisbuda <mdisbuda@student.42kocaeli.com.t +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 12:32:06 by mdisbuda          #+#    #+#             */
-/*   Updated: 2026/04/08 19:57:31 by mdisbuda         ###   ########.fr       */
+/*   Updated: 2026/04/10 21:23:25 by mdisbuda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,15 @@ char *reader(int fd)
     if(!temp)
         return (NULL);
     bytes_read = read(fd,temp, BUFFER_SIZE);
-    if(bytes_read <= 0)
+    if(bytes_read < 0)
     {
         free(temp);
         return (NULL);
+    }
+    else if(bytes_read == 0)
+    {
+        free(temp);
+        return(-2);
     }
     temp[bytes_read] = '\0'; 
     return (temp);
@@ -84,18 +89,25 @@ char *reader(int fd)
 char *get_next_line(int fd)
 {
     static char *memory;
-    char *buffer;
+    char *temp;
+    char *buffer_temp;
+    char *sacred;
+
+    sacred = memory;
     int i;
     if (fd < 0 || BUFFER_SIZE <= 0)
         return (NULL);
 
-    if(checker(&memory,&i))
+
+    while(checker(memory,&i))
     {
-        
+        temp = reader(fd);
+        if(!temp)
+            return(NULL);
+        memory = ft_strjoin_gnl(memory,temp);
+        free(temp);
     }
-
-
-    free(memory);
+    free(sacred);
 }
 
 
