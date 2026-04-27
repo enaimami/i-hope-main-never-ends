@@ -29,9 +29,9 @@ int	detect_and_write(va_list *ap, const char s)
 	if (s == 'u')
 		return ((int)ft_putnbr_u(va_arg(*ap, unsigned int)));
 	if (s == 'x')
-		return (ft_putnbr_hex(va_arg(*ap, unsigned long)));
+		return (ft_putnbr_hex((unsigned long)va_arg(*ap, unsigned int)));
 	if (s == 'X')
-		return (ft_putnbr_hex_up(va_arg(*ap, unsigned long)));
+		return (ft_putnbr_hex_up((unsigned long)va_arg(*ap, unsigned int)));
 	return (ft_putchar('%') + ft_putchar(s));
 }
 
@@ -49,6 +49,8 @@ int	ft_printf(const char *s, ...)
 		if (*s == '%')
 		{
 			s++;
+			if (!*s)
+				break ;
 			count = count + detect_and_write(&ap, *s);
 		}
 		else
