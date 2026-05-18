@@ -18,16 +18,19 @@ class Plant:
         self.height = self.height + self.growth_rate
 
 
-def ft_show_growth() -> None:
-    rose = Plant("Rose", 25.0, 30, 0.8)
-    print("=== Garden Plant Growth ===")
-    rose.show()
-    for i in range(1, 8):
-        print(f"=== Day {i} ===")
-        rose.age()
-        rose.grow()
-        rose.show()
-    print(f"Growth this week: {round(i * rose.growth_rate, 1)}cm")
+def ft_plant_factory() -> None:
+    garden = [
+        Plant("Rose", 25.0, 30, 1),
+        Plant("Oak", 200.0, 365, 1.2),
+        Plant("Cactus", 5.0, 90, 1.1),
+        Plant("Sunflower", 80.0, 45, 0.3),
+        Plant("Fern", 15.0, 120, 0.9)
+    ]
+    print("=== Plant Factory Output ===")
+    for plant in garden:
+        print("Created: ", end="")
+        plant.show()
+
 
 if __name__ == "__main__":
-    ft_show_growth()
+    ft_plant_factory()
